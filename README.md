@@ -39,12 +39,19 @@ Output:
 CNN model trained to classify a chest X-Ray image for presence or absence of pneumonia containing model weights.
 
 Open 2_Build_and_Train_Model with Jupyter Notebook.
+
 Create training data and validation data splits with scikit-learn train_test_split function.
+
 Ensure training data split is balanced for positive and negative cases. Ensure validation data split has a positive to negative case ratio that reflects clinical scenarios. Also check that each split has demographics that are reflective of the overall dataset.
+
 Prepare image preprocessing for each data split using Keras ImageDataGenerator.
+
 To fine-tune the ImageNet VGG16 model, create a new Keras Sequential model by adding VGG16 model layers and freezing their ImageNet-trained weights. Subsequently add Dense and Dropout layers, which will have their weights trained for classifying chest X-Ray images for pneumonia.
+
 The model training will have a history to show loss metrics at each training epoch. The best model weights are also captured at each training epoch.
+
 Model predictions initially return as probabilities between 0 and 1. These probabilistic results were compared against ground truth labels.
+
 A threshold analysis was completed to select the boundary at which probabilistic results are converted into binary results of either pneumonia presence or absence.
 The CheXNet algorithm achieved an F1 score of 0.435, while a panel of four independent Radiologists averaged an F1 score of 0.387 [2]. This project's final F1 score is 0.36, which is similar in performance to the panel of Radiologist.
 
