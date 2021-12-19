@@ -1,22 +1,23 @@
 Pneumonia Detection From X-Rays
+
 Introduction:
+
 Nowadays due to advance in deep learning and computer vision to create software to assist medical physicians. In this project, we are using a computer vision(CI) with a convolutional neural network (CNN) model is trained to predict the patient have or not of pneumonia from chest X-Ray images. The VGG16 CNN model was used for this classification task. The purpose of use for this model is to pre-screen chest X-Ray images prior to radiologists' review to reduce their time.
 This project is organized in three Jupyter Notebooks:
 
-1_EDA (Exploratory Data Analysis): NIH X-Ray Dataset and X-ray image pixel-level analysis.
+1_EDA (Exploratory Data Analysis):
+
+NIH X-Ray Dataset and X-ray image pixel-level analysis.
+
 2_Build_and_Train_Model: Image pre-processing with Keras ImageDataGenerator, split dataset using Scikit-Learn, build & train a Keras Sequential model, and convert probabilistic outputs to binary predictions(easy to process).
 test1.dcm
-Figure 1. Example of in-line prediction output in 3_Inference.ipynb Jupyter Notebook
+3.Test the model giving random images:
 
+Dataset:
 
-Dataset
 This project uses the ChestX-ray14 dataset released by NIH Clinical Center. It is comprised of 74 X-Ray images with disease labels from 20,805 unique patients.
 The disease labels for each image were created using Natural Language Processing (NLP) to process associated radiological reports for fourteen common pathologies. The estimated accuracy of the NLP labeling accuracy is estimated to be >90%.
 
-
-Getting Started
-1. Installation
-Set up your Anaconda environment.
 Project Overview
 
 Exploratory Data Analysis
@@ -24,6 +25,7 @@ Building and Training Your Model
 Inference
 FDA Preparation
 Part 1: Exploratory Data Analysis
+
 Open 1_EDA.ipynb with Anaconda for exploratory data analysis. The following data are examined:
 
 ChestX-ray14 Dataset metadata contains information for each X-Ray image file, the associated disease findings, patient gender, age, patient position during X-ray, and image shape.
@@ -34,9 +36,8 @@ Inputs:
 ChestX-ray dataset containing 74 X-Ray images (.png) in data/images and metadata in data folder.
 Output:
 
-CNN model trained to classify a chest X-Ray image for presence or absence of pneumonia in /out/my_model1.json.
-/out/xray_class_my_model.best.hdf5 containing model weights.
-NOTE: This is not included in this GitHub repo.
+CNN model trained to classify a chest X-Ray image for presence or absence of pneumonia containing model weights.
+
 Open 2_Build_and_Train_Model with Jupyter Notebook.
 Create training data and validation data splits with scikit-learn train_test_split function.
 Ensure training data split is balanced for positive and negative cases. Ensure validation data split has a positive to negative case ratio that reflects clinical scenarios. Also check that each split has demographics that are reflective of the overall dataset.
